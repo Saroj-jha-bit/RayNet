@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - RayNet</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+
+    <div class="flex min-h-screen">
+        <!-- Left Panel -->
+        <div class="hidden lg:flex w-1/2 left-panel items-center justify-center p-12 text-white">
+            <div class="text-center max-w-md">
+                <a href="index.html">
+                <img src="logo.png" alt="RayNet Logo" class="h-16 w-auto">
+            </a>
+                <h1 class="text-3xl font-semibold mb-2">Join Our Solar Community.</h1>
+                <p class="text-lg opacity-90">Create an account to start managing your energy and contributing to a greener future.</p>
+            </div>
+        </div>
+
+        <!-- Right Panel (Form) -->
+        <div class="w-full lg:w-1/2 flex items-center justify-center p-8 sm:p-12">
+            <div class="w-full max-w-md">
+                <h2 class="text-3xl font-bold mb-2" style="color: var(--text-day);">📝 Create an Account</h2>
+                <p style="color: var(--muted-text-day);" class="mb-8">Let's get you started!</p>
+
+                <form id="signup-form" novalidate>
+                    <div id="message-box" class="message-box"></div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="mb-4">
+                            <label for="signup-fullname" class="block mb-2 text-sm font-medium">Full Name</label>
+                            <input type="text" id="signup-fullname" class="w-full px-4 py-3 border border-gray-300 rounded-lg form-input focus:outline-none" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="signup-username" class="block mb-2 text-sm font-medium">Username</label>
+                            <input type="text" id="signup-username" class="w-full px-4 py-3 border border-gray-300 rounded-lg form-input focus:outline-none" placeholder="e.g. GreenValley12" required>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="signup-email" class="block mb-2 text-sm font-medium">Email</label>
+                        <input type="email" id="signup-email" class="w-full px-4 py-3 border border-gray-300 rounded-lg form-input focus:outline-none" required>
+                    </div>
+                    <!-- Password with Strength Meter -->
+                    <div class="mb-4">
+                        <label for="signup-password" class="block mb-2 text-sm font-medium">Password</label>
+                        <input type="password" id="signup-password" class="w-full px-4 py-3 border border-gray-300 rounded-lg form-input focus:outline-none" required>
+                        <div class="strength-meter">
+                            <div id="strength-bar-1"></div>
+                            <div id="strength-bar-2"></div>
+                            <div id="strength-bar-3"></div>
+                        </div>
+                    </div>
+                    <!-- Confirm Password with Match Indicator -->
+                    <div class="mb-6 relative">
+                        <label for="confirm-password" class="block mb-2 text-sm font-medium">Confirm Password</label>
+                        <input type="password" id="confirm-password" class="w-full px-4 py-3 border border-gray-300 rounded-lg form-input focus:outline-none" required>
+                        <i id="password-match-icon" class="password-match-icon fas"></i>
+                    </div>
+                    
+                    <div>
+                        <button type="submit" id="signup-btn" class="w-full text-white font-bold py-3 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 signup-btn">Sign Up</button>
+                    </div>
+                </form>
+
+                <p class="mt-8 text-center text-sm" style="color: var(--muted-text-day);">
+                    Already have an account?
+                    <a href="raynet.html" class="font-medium" style="color: var(--accent);">Login here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <button id="mode-toggle" class="mode-toggle" aria-label="Toggle theme">
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <!-- Link to your custom JS file -->
+    <script src="signup.js"></script>
+</body>
+</html>

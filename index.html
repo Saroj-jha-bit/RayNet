@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RayNet - Community Solar Distribution</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header sticky top-0 z-50">
+              <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html">
+                <img src="logo.png" alt="RayNet Logo" class="h-16 w-auto">
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="book.html" class="nav-link">Book</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+            </nav>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="raynet.html" class="nav-link">Login</a>
+                <a href="signup.html" class="btn btn-primary text-white font-bold py-2 px-6 rounded-full">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero h-screen -mt-20 flex items-center justify-center text-white">
+        <div class="text-center max-w-3xl mx-auto px-6">
+            <h1 class="hero-title text-4xl md:text-6xl font-extrabold leading-tight mb-4">Energy On Demand</h1>
+            <p class="hero-title text-lg md:text-xl opacity-80 mb-8" style="transition-delay: 0.2s;"> “With Energy on Demand, RayNet makes solar simple affordable, dependable, and always within reach.”</p>
+            <div class="hero-title flex justify-center gap-4" style="transition-delay: 0.4s;">
+                <a href="book.html" class="btn btn-primary text-white font-bold py-3 px-8 rounded-full text-lg">Book now</a>
+                <a href="raynet.html" class="btn btn-secondary font-bold py-3 px-8 rounded-full text-lg">Login</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 md:py-32">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Choose RayNet?</h2>
+            <p class="max-w-2xl mx-auto mb-16" style="color: var(--muted-text-day);">Our platform is designed to make solar energy management simple, transparent, and effective for everyone.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card p-8 rounded-xl text-center">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Track Your Usage</h3>
+                    <p style="color: var(--muted-text-day);">Monitor your energy production and consumption in real-time with our intuitive dashboard.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="feature-card p-8 rounded-xl text-center" style="transition-delay: 0.2s;">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Community Grid</h3>
+                    <p style="color: var(--muted-text-day);">Share surplus energy with your neighbors and contribute to a resilient local power grid.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="feature-card p-8 rounded-xl text-center" style="transition-delay: 0.4s;">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Secure & Reliable</h3>
+                    <p style="color: var(--muted-text-day);">Your data and energy transactions are protected with industry-leading security.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t" style="border-color: var(--border-color-day);">
+        <div class="container mx-auto px-6 py-8 text-center" style="color: var(--muted-text-day);">
+            <p>&copy; 2025 RayNet. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="mode-toggle" class="mode-toggle" aria-label="Toggle theme">
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <!-- Link to your custom JS file -->
+    <script src="index.js"></script>
+</body>
+</html>

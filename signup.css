@@ -1,0 +1,131 @@
+:root {
+    --bg-day: #f0f4f8;
+    --card-bg-day: #ffffff;
+    --text-day: #1e293b;
+    --muted-text-day: #64748b;
+    --accent: #0891b2; /* Cyan */
+    --border-color-day: rgba(226, 232, 240, 0.8);
+}
+
+body.night-mode {
+    --bg-day: #0f172a;
+    --card-bg-day: #1e293b;
+    --text-day: #e2e8f0;
+    --muted-text-day: #94a3b8;
+    --accent: #22d3ee;
+    --border-color-day: rgba(51, 65, 85, 0.8);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-day);
+    color: var(--text-day);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.left-panel {
+    background: linear-gradient(rgba(13, 148, 136, 0.85), rgba(8, 145, 178, 0.85)), url('https://images.unsplash.com/photo-1622359941389-656117c0b89a?auto=format&fit=crop&w=1974&q=80') no-repeat center center;
+    background-size: cover;
+}
+
+.form-input {
+    background-color: #f8fafc;
+    transition: all 0.3s ease;
+}
+
+body.night-mode .form-input {
+    background-color: #334155;
+    border-color: #475569;
+    color: #e2e8f0;
+}
+
+.form-input:focus {
+    box-shadow: 0 0 0 2px var(--accent);
+    border-color: var(--accent);
+    background-color: var(--card-bg-day);
+}
+
+.signup-btn {
+    background-color: var(--accent);
+    transition: all 0.3s ease;
+}
+.signup-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.message-box {
+    display: none;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    border: 1px solid;
+}
+.message-box.error {
+    background-color: #fef2f2;
+    color: #ef4444;
+    border-color: #fecaca;
+}
+.message-box.success {
+    background-color: #f0fdf4;
+    color: #16a34a;
+    border-color: #bbf7d0;
+}
+
+.mode-toggle {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color-day);
+    background-color: var(--card-bg-day);
+    color: var(--muted-text-day);
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 60;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s;
+}
+.mode-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+    color: var(--accent);
+}
+
+/* Password Strength Meter */
+.strength-meter {
+    height: 5px;
+    background-color: #e5e7eb;
+    border-radius: 5px;
+    margin-top: 8px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+}
+.strength-meter div {
+    height: 5px;
+    border-radius: 5px;
+    background-color: #e5e7eb;
+    transition: background-color 0.3s;
+}
+.strength-meter div.weak { background-color: #ef4444; }
+.strength-meter div.medium { background-color: #f59e0b; }
+.strength-meter div.strong { background-color: #22c55e; }
+
+/* Password Match Indicator */
+.password-match-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.password-match-icon.visible {
+    opacity: 1;
+}

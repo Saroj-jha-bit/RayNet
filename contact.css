@@ -1,0 +1,97 @@
+:root {
+    --bg-day: #f8fafc;
+    --card-bg-day: #ffffff;
+    --text-day: #0f172a;
+    --muted-text-day: #475569;
+    --accent: #14b8a6; /* Teal */
+    --accent-dark: #0f766e;
+    --border-color-day: #e2e8f0;
+}
+
+body.night-mode {
+    --bg-day: #0f172a;
+    --card-bg-day: #1e293b;
+    --text-day: #f8fafc;
+    --muted-text-day: #94a3b8;
+    --accent: #2dd4bf;
+    --accent-dark: #14b8a6;
+    --border-color-day: #334155;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-day);
+    color: var(--text-day);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.header {
+    background-color: color-mix(in srgb, var(--card-bg-day) 80%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color-day);
+}
+.logo { color: var(--accent); }
+.nav-link { color: var(--muted-text-day); }
+.nav-link:hover { color: var(--accent); }
+.btn-primary { background-color: var(--accent); }
+.btn-primary:hover { background-color: var(--accent-dark); }
+
+.inner-form {
+    background-color: var(--card-bg-day);
+    color: var(--text-day);
+}
+.inner-form label, .inner-form .block {
+    color: var(--text-day);
+}
+
+.form-input {
+    background-color: var(--bg-day);
+    border: 1px solid var(--border-color-day);
+}
+.form-input:focus {
+    box-shadow: 0 0 0 2px var(--accent);
+    border-color: var(--accent);
+}
+
+.info-box {
+    background-color: var(--card-bg-day);
+    border: 1px solid var(--border-color-day);
+    color: var(--text-day);
+}
+.info-box h3, .info-box h4 {
+    color: var(--text-day);
+}
+.info-box div, .info-box a {
+    color: var(--muted-text-day);
+}
+.info-box a.hover\:underline:hover {
+    color: var(--accent);
+}
+.info-box .hover\:text-teal-600:hover {
+     color: var(--accent);
+}
+
+
+.mode-toggle {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color-day);
+    background-color: var(--card-bg-day);
+    color: var(--muted-text-day);
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 60;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s;
+}
+.mode-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+    color: var(--accent);
+}

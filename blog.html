@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - RayNet</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+              <a href="landing.html">
+                <img src="logo.png" alt="RayNet Logo" class="h-16 w-auto">
+            </a>
+            <nav class="flex items-center space-x-4">
+                <a href="landing.html" class="nav-link hidden sm:inline font-medium transition">Home</a>
+                <a href="raynet.html" class="nav-link font-medium transition">Sign In</a>
+                <a href="signup.html" class="btn btn-primary text-white font-bold py-2 px-5 rounded-full transition">Sign Up</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12 md:py-20">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold mb-2">RayNet Blog</h1>
+            <p style="color: var(--muted-text-day);">Insights on solar energy, community power, and sustainable living.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <!-- Blog Posts -->
+            <div class="lg:col-span-2 space-y-12">
+                <!-- Blog Post 1 -->
+                <article class="blog-card rounded-2xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1545239351-ef35f43d514b?auto=format&fit=crop&w=1074&q=80" alt="Blog post with typewriter" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <p class="text-sm mb-2" style="color: var(--accent);">SOLAR 101</p>
+                        <h2 class="text-2xl font-bold mb-4"><a href="#" class="hover:underline">The Rise of Community Solar: What Is It and Why Does It Matter?</a></h2>
+                        <p class="mb-6" style="color: var(--muted-text-day);">Community solar projects are transforming the energy landscape. Discover how these shared solar arrays allow multiple people to benefit from solar power, even if they can't install panels on their own property...</p>
+                        <div class="flex items-center text-sm" style="color: var(--muted-text-day);">
+                            <img src="https://i.pravatar.cc/40?u=a042581f4e29026704d" alt="Author Jane Doe" class="w-10 h-10 rounded-full mr-4">
+                            <div>
+                                <strong>Jane Doe</strong>
+                                <span class="mx-2">•</span>
+                                <span>August 27, 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-card rounded-2xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1170&q=80" alt="Person working on a laptop" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <p class="text-sm mb-2" style="color: var(--accent);">TECHNOLOGY</p>
+                        <h2 class="text-2xl font-bold mb-4"><a href="#" class="hover:underline">5 Ways to Maximize Your Solar Panel Efficiency</a></h2>
+                        <p class="mb-6" style="color: var(--muted-text-day);">Getting the most out of your solar investment is key. From proper panel placement to regular maintenance, we explore five practical tips that can help you boost your energy production and save more on your utility bills...</p>
+                        <div class="flex items-center text-sm" style="color: var(--muted-text-day);">
+                            <img src="https://i.pravatar.cc/40?u=a042581f4e29026705d" alt="Author John Smith" class="w-10 h-10 rounded-full mr-4">
+                            <div>
+                                <strong>John Smith</strong>
+                                <span class="mx-2">•</span>
+                                <span>August 22, 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                 <!-- Blog Post 3 -->
+                <article class="blog-card rounded-2xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1170&q=80" alt="Charts and graphs on a screen" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <p class="text-sm mb-2" style="color: var(--accent);">FINANCE</p>
+                        <h2 class="text-2xl font-bold mb-4"><a href="#" class="hover:underline">Understanding Solar Incentives and Tax Credits in India</a></h2>
+                        <p class="mb-6" style="color: var(--muted-text-day);">Going solar is more affordable than ever, thanks to a variety of government incentives. We break down the current tax credits, rebates, and other programs available in India to help you make a financially sound decision...</p>
+                        <div class="flex items-center text-sm" style="color: var(--muted-text-day);">
+                            <img src="https://i.pravatar.cc/40?u=a042581f4e29026706d" alt="Author Priya Sharma" class="w-10 h-10 rounded-full mr-4">
+                            <div>
+                                <strong>Priya Sharma</strong>
+                                <span class="mx-2">•</span>
+                                <span>August 15, 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="space-y-8">
+                <div class="p-6 rounded-2xl" style="background-color: var(--card-bg-day); border: 1px solid var(--border-color-day);">
+                    <h3 class="text-lg font-bold mb-4">Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-teal-500 transition" style="color: var(--muted-text-day);">Solar 101</a></li>
+                        <li><a href="#" class="hover:text-teal-500 transition" style="color: var(--muted-text-day);">Technology</a></li>
+                        <li><a href="#" class="hover:text-teal-500 transition" style="color: var(--muted-text-day);">Finance</a></li>
+                        <li><a href="#" class="hover:text-teal-500 transition" style="color: var(--muted-text-day);">Community Stories</a></li>
+                    </ul>
+                </div>
+                <div class="p-6 rounded-2xl" style="background-color: var(--card-bg-day); border: 1px solid var(--border-color-day);">
+                    <h3 class="text-lg font-bold mb-4">About RayNet</h3>
+                    <p style="color: var(--muted-text-day);">RayNet is dedicated to making solar energy accessible and manageable for communities everywhere. Our platform empowers users to track, share, and optimize their clean energy usage.</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+    
+    <button id="mode-toggle" class="mode-toggle" aria-label="Toggle theme">
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <!-- Link to your custom JS file -->
+    <script src="blog.js"></script>
+</body>
+</html>

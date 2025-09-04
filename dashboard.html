@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RayNet Dashboard</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="day-mode">
+
+    <!-- Header -->
+    <header class="dashboard-header">
+        <div class="flex items-center gap-4">
+             <a href="index.html">
+                <img src="logo.png" alt="RayNet Logo" class="h-16 w-auto">
+            </a>
+        </div>
+
+        <nav class="nav-links">
+            <a href="book.html" class="nav-btn">
+                <i class="fas fa-book-open"></i> Book
+            </a>
+            <a href="blog.html" class="nav-btn">
+                <i class="fas fa-tools"></i> Blog
+            </a>
+            <a href="contact.html" class="nav-btn">
+                <i class="fas fa-phone"></i> Contact
+            </a>
+        </nav>
+
+        <div class="header-right">
+            <button id="logout-btn" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+                <span class="hidden sm:inline">Logout</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="dashboard-content">
+        <!-- Welcome Message -->
+        <h1 id="welcome-message" class="welcome-title">Welcome, User!</h1>
+
+        <!-- Stats Section -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12" aria-label="Energy Statistics">
+            <div class="stat-box">
+                <div class="stat-icon-wrapper" style="--icon-color: #10b981;">
+                    <i class="fas fa-solar-panel"></i>
+                </div>
+                <div class="stat-info">
+                    <h4 class="stat-title">Energy Stored</h4>
+                    <div class="stat-value">120 kWh</div>
+                </div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon-wrapper" style="--icon-color: #f59e0b;">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div class="stat-info">
+                    <h4 class="stat-title">Energy Used</h4>
+                    <div class="stat-value">45 kWh</div>
+                </div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon-wrapper" style="--icon-color: #3b82f6;">
+                    <i class="fas fa-battery-full"></i>
+                </div>
+                <div class="stat-info">
+                    <h4 class="stat-title">Energy Left</h4>
+                    <div class="stat-value">75 kWh</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calendar Section -->
+        <section class="calendar-section" aria-label="Daily Usage Calendar">
+            <div class="section-header">
+                <h3 class="section-title">Daily Usage</h3>
+                <div class="cal-controls">
+                    <button id="prev-month" class="cal-btn" aria-label="Previous month"><i class="fas fa-chevron-left"></i></button>
+                    <select id="month-select" class="month-select" aria-label="Select month"></select>
+                    <select id="year-select" class="year-select" aria-label="Select year"></select>
+                    <button id="next-month" class="cal-btn" aria-label="Next month"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+            <div class="calendar-container">
+                <table class="calendar" id="calendar" role="grid"></table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Day/Night Mode Toggle -->
+    <button id="mode-toggle" class="mode-toggle" aria-label="Toggle theme">
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+        <p>&copy; 2025 RayNet Community | All rights reserved</p>
+    </footer>
+    
+    <!-- Modal for Daily Usage -->
+    <div id="usage-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button id="modal-close-btn" class="modal-close-btn">&times;</button>
+            <h3 id="modal-date" class="modal-title"></h3>
+            <div class="modal-body">
+                <i class="fas fa-bolt modal-icon"></i>
+                <div>
+                    <p class="modal-text">Energy Consumed:</p>
+                    <p id="modal-usage" class="modal-value"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to your custom JS file -->
+    <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - RayNet</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="raynet.css">
+</head>
+<body>
+
+    <div class="flex min-h-screen">
+        <!-- Left Panel -->
+        <div class="hidden lg:flex w-1/2 left-panel items-center justify-center p-12 text-white">
+            <div class="text-center max-w-md">
+                  <a href="index.html">
+                <img src="logo.png" alt="RayNet Logo" class="h-16 w-auto">
+            </a>
+                <h1 class="text-3xl font-semibold mb-2">Powering Communities, One Ray at a Time.</h1>
+                <p class="text-lg opacity-90">"One community at a time" 🌐</p>
+            </div>
+        </div>
+
+        <!-- Right Panel (Form) -->
+        <div class="w-full lg:w-1/2 flex items-center justify-center p-8 sm:p-12">
+            <div class="w-full max-w-md glass-box p-8 rounded-2xl">
+                
+                <div class="text-center mb-6">
+                     <div class="text-4xl font-bold flex items-center justify-center gap-3" style="color: var(--accent);">
+                        <i class="fas fa-solar-panel"></i> RayNet
+                    </div>
+                </div>
+
+                <h2 class="text-3xl font-bold mb-2 text-center">Welcome Back! 👋</h2>
+                <p style="color: var(--muted-text-day);" class="mb-8 text-center">Please sign in to access your dashboard.</p>
+
+                <form id="signin-form" novalidate>
+                    <p id="error-message" class="error-message"></p>
+                    <div class="mb-5">
+                        <label for="signin-user" class="block mb-2 text-sm font-medium" style="color: var(--text-day);">Username or Email</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3"><i class="fas fa-user" style="color: var(--muted-text-day);"></i></span>
+                            <input type="text" id="signin-user" name="email" class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg form-input focus:outline-none" placeholder="yourname or you@example.com" required>
+                        </div>
+                    </div>
+                    <div class="mb-5">
+                        <label for="signin-password" class="block mb-2 text-sm font-medium" style="color: var(--text-day);">Password</label>
+                         <div class="relative">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3"><i class="fas fa-lock" style="color: var(--muted-text-day);"></i></span>
+                            <input type="password" id="signin-password" name="password" class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg form-input focus:outline-none" placeholder="••••••••" required>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" id="login-btn" class="w-full text-white font-bold py-3 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 signin-btn">Sign In</button>
+                    </div>
+                </form>
+
+                <p class="mt-8 text-center text-sm" style="color: var(--muted-text-day);">
+                    Don't have an account?
+                    <a href="signup.html" class="font-medium" style="color: var(--accent);">Register</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Floating Menu Button -->
+    <button id="menu-open-btn" class="menu-button" aria-label="Open navigation menu">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <!-- Navigation Overlay -->
+    <div id="nav-overlay" class="nav-overlay"></div>
+    
+    <!-- Slide-out Navigation Panel -->
+    <div id="slide-out-panel">
+        <div class="p-6 flex flex-col h-full">
+            <div class="flex justify-between items-center mb-8">
+                <div class="text-2xl font-bold" style="color: var(--accent);">
+                    <i class="fas fa-solar-panel"></i> RayNet
+                </div>
+                <button id="menu-close-btn" class="text-2xl" style="color: var(--muted-text-day);">&times;</button>
+            </div>
+            <nav class="flex flex-col space-y-4">
+                <a href="index.html" class="nav-link-item">Home</a>
+                <a href="book.html" class="nav-link-item">Booking</a>
+                <a href="contact.html" class="nav-link-item">Contact</a>
+                <a href="blog.html" class="nav-link-item">Blog</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Day/Night Toggle -->
+    <button id="mode-toggle" class="mode-toggle" aria-label="Toggle theme">
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <!-- Link to your custom JS file -->
+    <script src="raynet.js"></script>
+</body>
+</html>

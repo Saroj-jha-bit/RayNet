@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Power Bank - RayNet</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="book.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html">
+                <img src="logo.png" alt="RayNet Logo" class="h-16 w-auto">
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+            </nav>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="raynet.html" class="nav-link">Login</a>
+                <a href="signup.html" class="btn btn-primary text-white font-bold py-2 px-6 rounded-full">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-6 py-12 md:py-20">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold mb-2">Rent a Power Bank</h1>
+                <p style="color: var(--muted-text-day);">Power your events with our reliable, solar-charged power banks.</p>
+            </div>
+
+            <div class="p-8 md:p-12 rounded-2xl form-container">
+                <form id="booking-form" novalidate>
+                    <div id="message-box" class="message-box"></div>
+                    
+                    <!-- Section 1: Contact & Delivery Details -->
+                    <h2 class="form-section-title">1. Contact & Delivery Details</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <label for="fullname" class="form-label">Full Name</label>
+                            <input type="text" id="fullname" class="form-input" required>
+                        </div>
+                        <div>
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" id="phone" class="form-input" required>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" id="email" class="form-input" required>
+                        </div>
+                         <div class="md:col-span-2">
+                            <label for="address" class="form-label">Full Delivery Address</label>
+                            <textarea id="address" rows="3" class="form-input" placeholder="e.g., 123 Event St, Sunville, State, 12345" required></textarea>
+                        </div>
+                        <div>
+                            <label for="energy-needed" class="form-label flex items-center gap-2">
+                                Total Estimated Energy (kWh)
+                                <i id="energy-info-btn" class="fas fa-question-circle text-gray-400 cursor-pointer hover:text-teal-500 transition-colors"></i>
+                            </label>
+                            <input type="number" id="energy-needed" class="form-input" placeholder="e.g., 5 kWh" required>
+                        </div>
+                    </div>
+
+                    <!-- Section 2: Verification -->
+                    <h2 class="form-section-title">2. Verification</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <label for="document-type" class="form-label">Document Type</label>
+                            <select id="document-type" class="form-input appearance-none" required>
+                                <option value="" disabled selected>Select document...</option>
+                                <option value="Aadhaar Card">Aadhaar Card</option>
+                                <option value="PAN Card">PAN Card</option>
+                                <option value="Electricity Bill">Electricity Bill</option>
+                                <option value="Passport">Passport</option>
+                                <option value="Voter ID">Voter ID</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="document-upload" class="form-label">Upload Document</label>
+                            <input type="file" id="document-upload" class="form-input p-2" required>
+                        </div>
+                    </div>
+
+                    <!-- Section 3: Power Bank Selection (Dynamic) -->
+                    <h2 class="form-section-title">3. Power Bank Selection</h2>
+                    <div class="border p-4 rounded-lg mb-4" style="border-color: var(--border-color-day);">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
+                            <div class="md:col-span-1">
+                                <label for="powerbank-type-select" class="form-label">Capacity</label>
+                                <select id="powerbank-type-select" class="form-input appearance-none">
+                                    <option value="1">1 kWh</option>
+                                    <option value="2">2 kWh</option>
+                                    <option value="3">3 kWh</option>
+                                    <option value="5">5 kWh</option>
+                                    <option value="10">10 kWh</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="powerbank-quantity-input" class="form-label">Quantity</label>
+                                <input type="number" id="powerbank-quantity-input" class="form-input" value="1" min="1">
+                            </div>
+                            <div>
+                                <button type="button" id="add-powerbank-btn" class="w-full text-white font-bold py-3 px-6 rounded-lg add-btn focus:outline-none flex items-center justify-center gap-2">
+                                    <i class="fas fa-plus-circle"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Booking Summary List -->
+                        <div id="booking-summary" class="mt-6 space-y-3">
+                            <!-- Selected items will be added here dynamically -->
+                        </div>
+                    </div>
+                    
+                    <!-- Cost Summary -->
+                    <div id="cost-summary" class="cost-summary-container mb-8">
+                        <div class="flex justify-between items-center py-2 text-lg">
+                            <span class="font-bold">Total Battery Charge</span>
+                            <span id="subtotal-amount" class="font-bold">₹0.00</span>
+                        </div>
+                        <div class="pt-2 border-t" style="border-color: var(--border-color-day);">
+                            <span class="text-sm" style="color: var(--muted-text-day);">+ Additional delivery & service charges will apply.</span>
+                        </div>
+                    </div>
+
+                     <!-- Section 4: Scheduling -->
+                    <h2 class="form-section-title">4. Scheduling</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="delivery-date" class="form-label">Delivery Date</label>
+                            <input type="date" id="delivery-date" class="form-input" required>
+                        </div>
+                        <div>
+                            <label for="pickup-date" class="form-label">Pickup Date</label>
+                            <input type="date" id="pickup-date" class="form-input" required>
+                        </div>
+                        <div>
+                            <label for="delivery-time" class="form-label">Delivery Time</label>
+                            <select id="delivery-time" class="form-input appearance-none" required>
+                                <option value="" disabled selected>Select time...</option>
+                                <option value="09:00 - 11:00">09:00 AM - 11:00 AM</option>
+                                <option value="11:00 - 13:00">11:00 AM - 01:00 PM</option>
+                                <option value="14:00 - 16:00">02:00 PM - 04:00 PM</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="pickup-time" class="form-label">Pickup Time</label>
+                             <select id="pickup-time" class="form-input appearance-none" required>
+                                <option value="" disabled selected>Select time...</option>
+                                <option value="17:00 - 19:00">05:00 PM - 07:00 PM</option>
+                                <option value="19:00 - 21:00">07:00 PM - 09:00 PM</option>
+                                <option value="21:00 - 23:00">09:00 PM - 11:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10 text-center">
+                        <button type="submit" class="w-full md:w-auto text-white font-bold py-3 px-12 rounded-full text-lg book-btn focus:outline-none">
+                            Book
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <button id="mode-toggle" class="mode-toggle" aria-label="Toggle theme">
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <!-- Energy Info Modal -->
+    <div id="energy-info-modal" class="fixed inset-0 bg-black bg-opacity-60 z-[100] hidden items-center justify-center p-4">
+        <div class="modal-content-custom w-full max-w-md p-6 sm:p-8 rounded-2xl shadow-xl relative">
+            <button id="modal-close-btn" class="absolute top-3 right-4 text-2xl text-gray-500 hover:text-gray-800 transition-colors">&times;</button>
+            <div class="flex items-center gap-4 mb-4">
+                <i class="fas fa-bolt text-2xl text-amber-400"></i>
+                <h3 class="text-xl font-bold">What is  kWh?</h3>
+            </div>
+            <p class="text-sm mb-5">In simple terms, 1 kWh is the energy a 1,000-watt appliance uses in one hour. Here are some examples for a typical 2BHK flat:</p>
+            <ul class="space-y-3 text-sm list-inside">
+                <li class="flex items-start gap-3"><i class="fas fa-check-circle text-teal-500 mt-1"></i><span><b>1 kWh:</b> Can run 2 fans and 4 LED lights for about 5 hours.</span></li>
+                <li class="flex items-start gap-3"><i class="fas fa-check-circle text-teal-500 mt-1"></i><span><b>2 kWh:</b> Can run 4 fans and 5 LED lights for about 5 hours.</span></li>
+                <li class="flex items-start gap-3"><i class="fas fa-check-circle text-teal-500 mt-1"></i><span><b>3 kWh:</b> Can run 5 fans and 10 LED lights for about 5 hours.</span></li>
+                <li class="flex items-start gap-3"><i class="fas fa-check-circle text-teal-500 mt-1"></i><span><b>5 kWh:</b> Can run 8 fans and 44 LED lights for about 5 hours.</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="book.js"></script>
+</body>
+</html>
+
